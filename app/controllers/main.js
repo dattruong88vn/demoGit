@@ -4,6 +4,7 @@ $(document).ready(function () {
     function showPhim() {
         console.log('tram anh');
         console.log('vang anh');
+        console.log('maria');
     }
 
     layDanhSachNguoiDung();
