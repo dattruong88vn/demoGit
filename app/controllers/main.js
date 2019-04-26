@@ -1,6 +1,11 @@
 $(document).ready(function () {
     var nguoiDungService = new NguoiDungService();
 
+    function showPhim() {
+        console.log('tram anh');
+        console.log('vang anh');
+    }
+
     layDanhSachNguoiDung();
 
     //function cho #myModal khi bấm thêm mới hoặc cập nhật
