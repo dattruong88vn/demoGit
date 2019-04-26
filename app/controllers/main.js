@@ -1,11 +1,6 @@
 $(document).ready(function () {
     var nguoiDungService = new NguoiDungService();
-
-    function showPhim() {
-        console.log('tram anh');
-        console.log('vang anh');
-        console.log('maria');
-    }
+    // them chu thich
 
     layDanhSachNguoiDung();
 
