@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var nguoiDungService = new NguoiDungService();
-
+    // them chu thich
     layDanhSachNguoiDung();
 
     //function cho #myModal khi bấm thêm mới hoặc cập nhật
