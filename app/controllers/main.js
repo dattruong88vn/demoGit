@@ -68,22 +68,26 @@ $(document).ready(function () {
         getInput('Cập nhật người dùng', 'Cập nhật', 'btnCapNhat');
         var tk = $(this).data('capnhat');
 
-        var index = getIndexNguoiDung(nguoiDungService.DSND, tk);
-        console.log(index);
+        // var index = getIndexNguoiDung(nguoiDungService.DSND, tk);
+        // var index = nguoiDungService.layViTriNguoiDung(tk);
         
+        var nguoiDung = nguoiDungService.layThongTinNguoiDung(tk);
+        console.log(nguoiDung);
+
+
         //Show nội dung cũ
-        $('#TaiKhoan').val(nguoiDungService.DSND[index].TaiKhoan);
+        $('#TaiKhoan').val(nguoiDung.TaiKhoan);
         $('#TaiKhoan').prev().html('Tài khoản (không được thay đổi)');
         $('#TaiKhoan').attr('disabled', 'true');
-        $('#HoTen').val(nguoiDungService.DSND[index].HoTen);
+        $('#HoTen').val(nguoiDung.HoTen);
         $('#HoTen').prev().html('Nhập họ tên mới (nếu có)');
-        $('#MatKhau').val(nguoiDungService.DSND[index].MatKhau);
+        $('#MatKhau').val(nguoiDung.MatKhau);
         $('#MatKhau').prev().html('Nhập mật khẩu mới (nếu có)');
-        $('#Email').val(nguoiDungService.DSND[index].Email);
+        $('#Email').val(nguoiDung.Email);
         $('#Email').prev().html('Nhập email mới (nếu có)');
-        $('#SoDienThoai').val(nguoiDungService.DSND[index].SoDT);
+        $('#SoDienThoai').val(nguoiDung.SoDT);
         $('#SoDienThoai').prev().html('Nhập số điện thoại mới (nếu có)');
-        $('#loaiNguoiDung').val(nguoiDungService.DSND[index].MaLoaiNguoiDung);
+        $('#loaiNguoiDung').val(nguoiDung.MaLoaiNguoiDung);
         $('#loaiNguoiDung').prev().html('Chọn loại người dùng mới (nếu có)');
     });
     
@@ -171,4 +175,16 @@ $(document).ready(function () {
         });
         $('#tblDanhSachNguoiDung').html(content);
     }
+
+    //Lấy vị trí người dùng khi bấm xóa hoặc cập nhật
+        // function getIndexNguoiDung (danhsach, tk) {
+        //     for (var i = 0; i < danhsach.length; i++) {
+        //         if (danhsach[i].TaiKhoan === tk.toString()) {
+        //             return i;
+        //         }
+        //     }
+        //     return -1;
+        // }
+
+    
 })

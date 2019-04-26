@@ -67,8 +67,22 @@ function NguoiDungService() {
         return mangTimKiem;
     }
 
-    this.getIndexNguoiDung = function(tk) {
-        return this.DSND.findIndexOf(item => item.TaiKhoan === tk.toString());
-    } 
+    //trả về vị trí của người dùng
+        // this.layViTriNguoiDung = function(tk) {
+        //     var danhsach = JSON.parse(localStorage.getItem("danhSachNguoiDung"));
+        //     // return index
+        //     return danhsach.findIndex (function(item) {
+        //         return item.TaiKhoan === tk;
+        //     })
+        // }
+    
+    // trả về item người dùng
+    this.layThongTinNguoiDung = function(tk) {
+        var danhsach = JSON.parse(localStorage.getItem("danhSachNguoiDung"));
+        //return item
+        return danhsach.find(function(item) {
+            return item.TaiKhoan === tk;
+        })
+    }
 }
 
