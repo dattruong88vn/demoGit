@@ -2,6 +2,10 @@ $(document).ready(function () {
     var nguoiDungService = new NguoiDungService();
     // them chu thich
 
+    function abc() {
+        console.log("abc");
+    }
+
     layDanhSachNguoiDung();
 
     //function cho #myModal khi bấm thêm mới hoặc cập nhật
